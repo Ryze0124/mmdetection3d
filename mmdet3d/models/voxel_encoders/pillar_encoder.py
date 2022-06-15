@@ -249,9 +249,9 @@ class DynamicPillarFeatureNet(PillarFeatureNet):
         """
         # Step 1: scatter voxel into canvas
         # Calculate necessary things for canvas creation
-        canvas_y = int(
+        canvas_y = round(
             (self.point_cloud_range[4] - self.point_cloud_range[1]) / self.vy)
-        canvas_x = int(
+        canvas_x = round(
             (self.point_cloud_range[3] - self.point_cloud_range[0]) / self.vx)
         canvas_channel = voxel_mean.size(1)
         batch_size = pts_coors[-1, 0] + 1
